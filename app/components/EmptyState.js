@@ -3,71 +3,72 @@ export default function EmptyState({ setOpen, setPrompt }) {
     <div className="mt-12 sm:mt-24 space-y-6 text-gray-400 text-base mx-8 sm:mx-4 sm:text-2xl leading-12">
       <p>
         {" "}
-        Customize Llama&apos;s personality by clicking the{" "}
+        Настройет чат с Llama 2, изменив {" "}
         <button
           className="prompt-button inline-flex items-center "
           onClick={() => setOpen(true)}
         >
-          settings{" "}
+          настройки{" "}
         </button>{" "}
-        button.
+        .
       </p>
       <p>
-        I can{" "}
+        Я могу следующее:{" "}
         <button
           className="prompt-button"
           onClick={() =>
             setPrompt(
-              "Explain the self-attention mechanism that Transformers use like I'm five."
+              "Напиши мне спсоб стать более уверенным."
             )
           }
         >
-          explain concepts
+          Помогать находить ответы
         </button>
-        , write{" "}
+        . Писать{" "}
         <button
           className="prompt-button"
           onClick={() =>
-            setPrompt("Write a poem about open source machine learning. ")
+            setPrompt("Напиши мне, как создаются нейросети")
           }
         >
-          poems
+          статьи
         </button>{" "}
-        and{" "}
+        или{" "}
         <button
           className="prompt-button"
           onClick={() =>
             setPrompt(
-              "Write a python script that trains `bert-large` on the `IMDB` dataset using the Transformers `Trainer` class and Datasets library. I have access to four GPUs, so let's use DDP. Please write the script and then tell me how to launch it on the command line."
+              "Написать скрипт на языке python, который обучает `bert-large` на наборе данных `IMDB`, используя класс Transformers `Trainer` и библиотеку Datasets. У меня есть доступ к четырем GPU, поэтому будем использовать DDP. Пожалуйста, напишите скрипт, а затем расскажите, как запустить его в командной строке."
             )
           }
         >
-          code
+          коды
         </button>
-        ,{" "}
+        .{" "}
         <button
           className="prompt-button"
           onClick={() =>
             setPrompt(
-              "Respond to this question only based on the information provided here. Cats like dogs, and dogs like rabbits. Cats like anything that dogs like. I really really dislike rabbits. How do cats feel about rabbits?"
+              "Ответьте на этот вопрос, основываясь только на представленной здесь информации. Кошки любят собак, а собаки любят кроликов. Кошкам нравится все, что нравится собакам. Мне очень не нравятся кролики. Как кошки относятся к кроликам?"
             )
           }
         >
-          solve logic puzzles
+          Отвечать на логические вопросы
         </button>
-        , or even{" "}
+         . {" "}
         <button
           className="prompt-button"
           onClick={() =>
             setPrompt(
-              "please provide 10 fun names for a pet pelican. Please come up with unique emojis to go along with each name. Try not to repeat the same emojis. Make them fun, colorful, and loving names"
+              "пожалуйста, предоставьте 10 забавных имен для домашнего пеликана. Пожалуйста, придумайте уникальные эмодзи для каждого имени. Постарайтесь не повторять одни и те же эмодзи. Пусть это будут веселые, красочные и любящие имена."
             )
           }
         >
-          name your pets.
+          Генерировать различные данные.
         </button>{" "}
       </p>
-      <p>Send me a message.</p>
+      <p>Начните общение с чат ботом</p>
     </div>
   );
 }
+
