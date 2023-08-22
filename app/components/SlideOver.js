@@ -48,7 +48,7 @@ export default function SlideOver({
                       <div className="bg-gray-700 px-4 py-6 sm:px-6">
                         <div className="flex items-center justify-between">
                           <Dialog.Title className="text-base font-semibold leading-6 text-white">
-                            🦙 Chat with a Llama
+                            🦙 Чат с языковой моделью Llama
                           </Dialog.Title>
                           <div className="ml-3 flex h-7 items-center">
                             <button
@@ -66,7 +66,7 @@ export default function SlideOver({
                         </div>
                         <div className="mt-1">
                           <p className="text-sm text-gray-300">
-                            A project from Replicate.
+                            Автор - Dodjrgskbxhrve
                           </p>
                         </div>
                       </div>
@@ -78,14 +78,16 @@ export default function SlideOver({
                                 htmlFor="description"
                                 className="block font-bold text-sm leading-6 text-gray-900"
                               >
-                                Llama Size
+                                Выбор модели
                               </label>
 
                               <p
                                 id="system-prompt-description"
                                 className="mt-2 text-xs text-gray-500"
                               >
-                                Larger size means smarter, but slower.
+                                70B - самая точная и многофункциональная, работает не очень быстро
+                                7B - создана для решения простых задач и ответов на вопросы, работает быстро
+                                13B - среднее по точности и скорости работы
                               </p>
                               <div className="">
                                 <Listbox value={size} onChange={setSize}>
@@ -160,14 +162,13 @@ export default function SlideOver({
                                 htmlFor="description"
                                 className="block font-bold text-sm leading-6 text-gray-900"
                               >
-                                System Prompt
+                                Стоковые настройки бота. Это ассистент, программист и т.д.
                               </label>
                               <p
                                 id="system-prompt-description"
                                 className="mt-2 text-xs text-gray-500"
                               >
-                                This is prepended to the prompt and helps guide
-                                system behavior.
+                                Поле ввода стоковых настроек бота.
                               </p>
                               <div className="mt-3">
                                 <textarea
@@ -189,15 +190,13 @@ export default function SlideOver({
                                 htmlFor="temperature"
                                 className="block text-sm font-bold leading-6 text-gray-900"
                               >
-                                Temperature - {temp}
+                                Температура модели - {temp}
                               </label>
                               <p
                                 className="mt-2 text-xs text-gray-500"
                                 id="temperature-description"
                               >
-                                Adjusts randomness of outputs, greater than 1 is
-                                random and 0 is deterministic, 0.75 is a good
-                                starting value.
+                                Влияет на непредсказуемость и уникальность ответов.
                               </p>
                               <div className="mt-3">
                                 <input
@@ -220,14 +219,13 @@ export default function SlideOver({
                                 htmlFor="temperature"
                                 className="block text-sm font-bold leading-6 text-gray-900"
                               >
-                                Max Tokens - {maxTokens}
+                                Максимум токенов ответа - {maxTokens}
                               </label>
                               <p
                                 className="mt-2 text-xs text-gray-500"
                                 id="temperature-description"
                               >
-                                Maximum number of tokens to generate. A word is
-                                generally 2-3 tokens.
+                                Влияет на объем ответа. 1 слово - 2 или 3 токена.
                               </p>
                               <div className="mt-3">
                                 <input
@@ -250,15 +248,13 @@ export default function SlideOver({
                                 htmlFor="temperature"
                                 className="block text-sm font-bold leading-6 text-gray-900"
                               >
-                                Top P - {topP}
+                                Параметр Top P - {topP}
                               </label>
                               <p
                                 className="mt-2 text-xs text-gray-500"
                                 id="temperature-description"
                               >
-                                When decoding text, samples from the top p
-                                percentage of most likely tokens; lower to
-                                ignore less likely tokens.
+                                Влияет на то, сколько нейронов модели будет использоваться в создании ответов.
                               </p>
                               <div className="mt-3">
                                 <input
@@ -288,3 +284,4 @@ export default function SlideOver({
     </Transition.Root>
   );
 }
+
