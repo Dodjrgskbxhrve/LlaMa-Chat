@@ -41,7 +41,7 @@ export default function HomePage() {
   //   Llama params
   const [size, setSize] = useState(VERSIONS[2]); // default to 70B
   const [systemPrompt, setSystemPrompt] = useState(
-    "You are a helpful assistant."
+    "Ты - ассистент, способный отвечать на самые разные вопросы, а также генерировать контент по запросу"
   );
   const [temp, setTemp] = useState(0.75);
   const [topP, setTopP] = useState(0.9);
@@ -100,7 +100,7 @@ export default function HomePage() {
     while (approximateTokenCount(prompt) > MAX_TOKENS) {
       if (messageHistory.length < 3) {
         setError(
-          "Your message is too long. Please try again with a shorter message."
+          "Запрос превышает лимит токенов. Измените свой запрос, или разбейте его на отдельные части"
         );
 
         return;
@@ -128,20 +128,10 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="bg-slate-100 border-b-2 text-center p-3">
-        Powered by Replicate.{" "}
-        <a
-          href="https://replicate.com/blog/run-llama-2-with-an-api?utm_source=project&utm_campaign=llama2ai"
-          target="_blank"
-          className="underline"
-        >
-          Run and fine-tune Llama 2 in the cloud.
-        </a>
-      </div>
       <nav className="grid grid-cols-2 pt-3 pl-6 pr-3 sm:grid-cols-3 sm:pl-0">
         <div className="hidden sm:inline-block"></div>
         <div className="font-semibold text-gray-500 sm:text-center">
-          🦙 <span className="hidden sm:inline-block">Chat with</span>{" "}
+          🦙 <span className="hidden sm:inline-block">Чат бот с </span>{" "}
           <button
             className="py-2 font-semibold text-gray-500 hover:underline"
             onClick={() => setOpen(true)}
@@ -158,7 +148,7 @@ export default function HomePage() {
               className="w-5 h-5 text-gray-500 sm:mr-2 group-hover:text-gray-900"
               aria-hidden="true"
             />{" "}
-            <span className="hidden sm:inline">Clone on GitHub</span>
+            <span className="hidden sm:inline">Репозиторий с GitHub</span>
           </a>
           <button
             type="button"
@@ -169,7 +159,7 @@ export default function HomePage() {
               className="w-5 h-5 text-gray-500 sm:mr-2 group-hover:text-gray-900"
               aria-hidden="true"
             />{" "}
-            <span className="hidden sm:inline">Settings</span>
+            <span className="hidden sm:inline">Настройки</span>
           </button>
         </div>
       </nav>
