@@ -1,33 +1,26 @@
-# Llama Chat 🦙
+# Чат бот с Llama 🦙
 
-This is a [Next.js](https://nextjs.org/) app that demonstrates how to build a chat UI using the [Llama 2](https://replicate.com/replicate/llama70b-v2-chat) language model and Replicate's [streaming API (private beta)](https://replicate.com/docs/streaming).
-
-Here's a demo:
-
-https://github.com/replicate/llama-chat/assets/14149230/9c6aaef3-4e60-4846-a2d2-f9575e155b70
+Это web - приложение, представлябщее собой чат-бота со встроенной нейросетью LlaMa 2.
 
 
-## Usage
-
-Install dependencies:
-
+## Использование
+1) Комбинацией клавиш Win + R откройте панель "Выполнить". В строке действия введите cmd. В открывшемся окне с помощью команды "cd" перейдите в ту директорию, где хотите работать с приложением.
+2) Потом введите команду
+```console
+git clone https://github.com/Dodjrgskbxhrve/LlaMa-Chat
+```
+3) Затем, с помощью "cd" перейдите в папку LlaMa-Chat.
+4) Введите команду 
 ```console
 npm install
 ```
-
-Add your [Replicate API token](https://replicate.com/account#token) to `.env.local`:
-
+5)Перейдите на официальный сайт Replicate(https://replicate.com/). Когда вы войдете в аккаунт через свой аккаун  Github, то вам нужно перейти в раздел API - tokens. Там вы создаете новый токен. Затем, переходите в папку приложения в файл ".env.local" и вводите значение токена
+6)После создания токена, перейдите обратно в cmd и введите команду
+```console
+set REPLICATE_API_TOKEN=ваш токен без кавычек
 ```
-REPLICATE_API_TOKEN=<your-token-here>
-```
-
-Run the development server:
-
+7)Введите эту команду в командную строку, чтобы запустить приложение
 ```console
 npm run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser.
-
-For detailed instructions on how to create and use this template, see [replicate.com/docs/get-started/nextjs](https://replicate.com/docs/get-started/nextjs)
-
+Копируйте и вставляйте [http://localhost:3000](http://localhost:3000) в поисковую строку вашего браузера.
