@@ -7,7 +7,7 @@ const replicate = new Replicate({
 
 if (!process.env.REPLICATE_API_TOKEN) {
   throw new Error(
-    "The REPLICATE_API_TOKEN environment variable is not set. See README.md for instructions on how to set it."
+    "REPLICATE_API_TOKEN не распознан. Обратитесь к инструкции по работе с приложением."
   );
 }
 
