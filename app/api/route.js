@@ -18,7 +18,6 @@ export async function POST(req) {
     await req.json();
 
   const response = await replicate.predictions.create({
-    // IMPORTANT! You must enable streaming.
     stream: true,
     input: {
       prompt: `${prompt}`,
@@ -28,7 +27,6 @@ export async function POST(req) {
       repetition_penalty: 1,
       top_p: topP,
     },
-    // IMPORTANT! The model must support streaming. See https://replicate.com/docs/streaming
     version: version,
   });
 
