@@ -6,7 +6,6 @@ import Message from "./components/Message";
 import SlideOver from "./components/SlideOver";
 import EmptyState from "./components/EmptyState";
 import { Cog6ToothIcon, CodeBracketIcon } from "@heroicons/react/20/solid";
-import LoadingChatLine from "./components/LoadingChatLine";
 import { useCompletion } from "ai/react";
 
 function approximateTokenCount(text) {
@@ -16,17 +15,17 @@ function approximateTokenCount(text) {
 const VERSIONS = [
   {
     name: "Llama 2 7B",
-    version: "4b0970478e6123a0437561282904683f32a9ed0307205dc5db2b5609d6a2ceff",
+    version: "d24902e3fa9b698cc208b5e63136c4e26e828659a9f09827ca6ec5bb83014381",
     shortened: "7B",
   },
   {
     name: "Llama 2 13B",
-    version: "d5da4236b006f967ceb7da037be9cfc3924b20d21fed88e1e94f19d56e2d3111",
+    version: "9dff94b1bed5af738655d4a7cbcdcde2bd503aa85c94334fe1f42af7f3dd5ee3",
     shortened: "13B",
   },
   {
     name: "Llama 2 70B",
-    version: "2c1608e18606fad2812020dc541930f2d0495ce32eee50074220b87300bc16e1",
+    version: "2796ee9483c3fd7aa2e171d38f4ca12251a30609463dcfd4cd76703f22e96cdf",
     shortened: "70B",
   },
 ];
@@ -41,7 +40,7 @@ export default function HomePage() {
   //   Llama params
   const [size, setSize] = useState(VERSIONS[2]); // default to 70B
   const [systemPrompt, setSystemPrompt] = useState(
-    "Ты - ассистент, способный отвечать на самые разные вопросы, а также генерировать контент по запросу"
+    "Ты - асситент, который помогает пользователю."
   );
   const [temp, setTemp] = useState(0.75);
   const [topP, setTopP] = useState(0.9);
@@ -100,7 +99,7 @@ export default function HomePage() {
     while (approximateTokenCount(prompt) > MAX_TOKENS) {
       if (messageHistory.length < 3) {
         setError(
-          "Запрос превышает лимит токенов. Измените свой запрос, или разбейте его на отдельные части"
+          "Your message is too long. Please try again with a shorter message."
         );
 
         return;
@@ -128,10 +127,11 @@ export default function HomePage() {
 
   return (
     <>
+
       <nav className="grid grid-cols-2 pt-3 pl-6 pr-3 sm:grid-cols-3 sm:pl-0">
         <div className="hidden sm:inline-block"></div>
         <div className="font-semibold text-gray-500 sm:text-center">
-          🦙 <span className="hidden sm:inline-block">Чат бот с </span>{" "}
+          🦙 <span className="hidden sm:inline-block">Чатбот</span>{" "}
           <button
             className="py-2 font-semibold text-gray-500 hover:underline"
             onClick={() => setOpen(true)}
@@ -148,7 +148,7 @@ export default function HomePage() {
               className="w-5 h-5 text-gray-500 sm:mr-2 group-hover:text-gray-900"
               aria-hidden="true"
             />{" "}
-            <span className="hidden sm:inline">Репозиторий с GitHub</span>
+            <span className="hidden sm:inline">Репозиторий GitHub</span>
           </a>
           <button
             type="button"
