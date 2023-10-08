@@ -48,7 +48,7 @@ export default function SlideOver({
                       <div className="bg-gray-700 px-4 py-6 sm:px-6">
                         <div className="flex items-center justify-between">
                           <Dialog.Title className="text-base font-semibold leading-6 text-white">
-                            🦙 Чат с языковой моделью Llama
+                            🦙 Чатбот с моделями LaMma
                           </Dialog.Title>
                           <div className="ml-3 flex h-7 items-center">
                             <button
@@ -56,7 +56,7 @@ export default function SlideOver({
                               className="rounded-md bg-gray-700 text-gray-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
                               onClick={() => setOpen(false)}
                             >
-                              <span className="sr-only">Close panel</span>
+                              <span className="sr-only">Закрыть окно</span>
                               <XMarkIcon
                                 className="h-6 w-6"
                                 aria-hidden="true"
@@ -66,7 +66,7 @@ export default function SlideOver({
                         </div>
                         <div className="mt-1">
                           <p className="text-sm text-gray-300">
-                            Автор - Dodjrgskbxhrve
+                            Автор проекта - Dodgjrgskbxhrve. Сделано с ❤
                           </p>
                         </div>
                       </div>
@@ -78,16 +78,14 @@ export default function SlideOver({
                                 htmlFor="description"
                                 className="block font-bold text-sm leading-6 text-gray-900"
                               >
-                                Выбор модели
+                                Размер модели
                               </label>
 
                               <p
                                 id="system-prompt-description"
                                 className="mt-2 text-xs text-gray-500"
                               >
-                                70B - самая точная и многофункциональная, работает не очень быстро
-                                7B - создана для решения простых задач и ответов на вопросы, работает быстро
-                                13B - среднее по точности и скорости работы
+                                Чем больше модель, тем точнее ответы, но скорость генерации контента ниже.
                               </p>
                               <div className="">
                                 <Listbox value={size} onChange={setSize}>
@@ -162,13 +160,13 @@ export default function SlideOver({
                                 htmlFor="description"
                                 className="block font-bold text-sm leading-6 text-gray-900"
                               >
-                                Стоковые настройки бота. Это ассистент, программист и т.д.
+                                Установка модели по умолчанию
                               </label>
                               <p
                                 id="system-prompt-description"
                                 className="mt-2 text-xs text-gray-500"
                               >
-                                Поле ввода стоковых настроек бота.
+                                Здесь вы можете указать, кем является моедль и особенности диалога с ней.
                               </p>
                               <div className="mt-3">
                                 <textarea
@@ -190,13 +188,13 @@ export default function SlideOver({
                                 htmlFor="temperature"
                                 className="block text-sm font-bold leading-6 text-gray-900"
                               >
-                                Температура модели - {temp}
+                                Temperature - {temp}
                               </label>
                               <p
                                 className="mt-2 text-xs text-gray-500"
                                 id="temperature-description"
                               >
-                                Влияет на непредсказуемость и уникальность ответов.
+                                Параметр влияет на оригинальность контента.
                               </p>
                               <div className="mt-3">
                                 <input
@@ -219,13 +217,13 @@ export default function SlideOver({
                                 htmlFor="temperature"
                                 className="block text-sm font-bold leading-6 text-gray-900"
                               >
-                                Максимум токенов ответа - {maxTokens}
+                                Максимум токенов - {maxTokens}
                               </label>
                               <p
                                 className="mt-2 text-xs text-gray-500"
                                 id="temperature-description"
                               >
-                                Влияет на объем ответа. 1 слово - 2 или 3 токена.
+                                Максимальное количество токенов в ответе. 1 слово примерно 2-3 токена.
                               </p>
                               <div className="mt-3">
                                 <input
@@ -248,13 +246,13 @@ export default function SlideOver({
                                 htmlFor="temperature"
                                 className="block text-sm font-bold leading-6 text-gray-900"
                               >
-                                Параметр Top P - {topP}
+                                Top P - {topP}
                               </label>
                               <p
                                 className="mt-2 text-xs text-gray-500"
                                 id="temperature-description"
                               >
-                                Влияет на то, сколько нейронов модели будет использоваться в создании ответов.
+                                Параметр увеличивает качество ответов. Не их верность, а именно правильно формулирует ответы.
                               </p>
                               <div className="mt-3">
                                 <input
@@ -284,4 +282,3 @@ export default function SlideOver({
     </Transition.Root>
   );
 }
-
